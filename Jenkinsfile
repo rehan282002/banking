@@ -18,16 +18,12 @@ pipeline {
         }
         stage('Remove Old Container') {
             steps {
-                sh '''
-                docker rm -f finance-container || true
-                '''
+                sh 'docker rm -f finance-container || true'
             }
         }
         stage('Run New Container') {
             steps {
-                sh '''
-                docker run -d -p 8080:8080 --name finance-container rehan282002/finance-app
-                '''
+                sh 'docker run -d -p 8081:8080 --name finance-container rehan282002/finance-app'
             }
         }
     }
