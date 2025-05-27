@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/rehan282002/banking.git'
+                checkout scm
             }
         }
 
